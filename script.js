@@ -162,17 +162,37 @@ healScore[6] = score_sleep;
 
 var ctx = document.getElementById("myChart");
 var myChart = new Chart(ctx, {
-  type: 'radar',
+  type: 'polarArea',
+
   data: {
-    labels: scores,
+    labels: [
+        'BMI',
+        'Waist',
+        'Cholesterol',
+        'Smoking',
+        'Drinking',
+        'BP',
+        'Sleep'
+    ],
+    label: 'My Health Score',
     datasets: [
         { 
             data: healScore,
             label: "Health Score",
-            borderColor: "#3e95cd",
-            fill: false
+            backgroundColor: [
+            "#BF6384",
+            "#4BC0C0",
+            "#A9CEF6",
+            "#E7E9ED",
+            "#36A2EB",
+            "#36ALWB",
+            "#F6126B"
+        ],
           },
           
     ]
-  }
+
+
+  },
+
 });
