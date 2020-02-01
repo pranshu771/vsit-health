@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css">
+        <link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
+        <title>Healthapp</title>
+    </head>
+    <body>
+        <div class="ui fixed inverted menu">
+            <div class="ui container">
+                <div class="header item"><i class="code icon"></i>Healthapp</div>
+                <a href="/" class="item">Home</a>
+            
+                <%if(!currentUser){%>
+
+                    <a href="/register" class="item">Signin</a>
+                    <a href="/login" class="item">Login</a>
+            <%}else{%>
+                <a href="/new" class="item">New Post</a>
+                <a href="/logout" class="item">logout</a>
+             <%}%>   
+            </div>
+        </div>
+<% results.forEach(function(disease) { %>
+   <li> </li>
+
+
+<div class="ui main text container segment">
+    <div class="ui huge header"><%= disease["disease_name"] %></div>
+    <div class="ui top attached">
+       <div class="item">
+            <div class="content">
+                <span><%= disease["disease_cat"] %></span>
+            </div>
+            <div class="description">
+                    <p><%= disease["disease_info"].substring(0,100) %></p>
+            </div>
+            <div class="extra">
+                <a class="ui button inverted purple" href="/disease/<%=disease['disease_id']%>">Read More</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% }) %>
+<%if(currentUser){%>
+
+<%}%>
+
+</body>
+</html>

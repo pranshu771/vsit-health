@@ -9,21 +9,33 @@
         <div class="ui fixed inverted menu">
             <div class="ui container">
                 <div class="header item"><i class="code icon"></i>Healthapp</div>
-                <a href="/blog" class="item">Home</a>
-                <a href="/blog/new" class="item">New Post</a>
-                <a href="/register" class="item">Signin</a>
-                <a href="/login" class="item">Login</a>
+                
+                <%if(!currentUser){%>
+
+                    <a href="/register" class="item">Signin</a>
+                    <a href="/login" class="item">Login</a>
+            <%}else{%>
+                <a href="/new" class="item">New Post</a>
                 <a href="/logout" class="item">logout</a>
+             <%}%>   
             </div>
         </div>
-<form action="/data" method="POST">
-    <input type="number" name="user[systolic]" placeholder="sysytolic">
-    <input type="number" name="user[diastolic]" placeholder="diastolic">
-    <input type="number" name="user[sugar]" placeholder="sugar before"> 
-    <input type="number" name="user[pulse]" placeholder="pulse">
-    <input type="submit">
-</form>
+       
     
+
+<div class="ui main text container segment" style="margin-top: 100px;">
+    <div class="ui huge header " style="text-align: center;">Medical Details</div>
+        <form action="/data" style="margin-top: 100px;" method="POST">
+            <div style="text-align: center;"><input type="number" name="user[systolic]" placeholder="sysytolic"></div>
+            <div style="text-align:center;"><input type="number" name="user[diastolic]" placeholder="diastolic"></div>
+            <div><input type="number" name="user[sugar]" placeholder="sugar before"></div>
+            <div><input type="number" name="user[pulse]" placeholder="pulse"></div>
+            <div><input type="submit"></div>
+             
+            
+            
+        </form>
+</div>
 </body>
 </html>
 

@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css">
+        <link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
+        <title>Healthapp</title>
+    </head>
+    <body>
+        <div class="ui fixed inverted menu">
+            <div class="ui container">
+                <div class="header item"><i class="code icon"></i>Healthapp</div>
+                
+                <a href="/" class="item">Home</a>
+            
+                <%if(!currentUser){%>
+
+                    <a href="/register" class="item">Signin</a>
+                    <a href="/login" class="item">Login</a>
+            <%}else{%>
+                <a href="/new" class="item">New Post</a>
+                <a href="/logout" class="item">logout</a>
+             <%}%>  
+             
+            </div>
+        </div>
+        <h1 style="margin-top: 100px;text-align: center;">Welcome to the health app ,<%=currentUser.username%></h1> 
+        <div class="ui main text container segment">
+            <div class="ui huge header"></div>
+            <div class="ui top attached">
+                <div class="description">
+                    <p>Click here for information related to disease</p>
+                </div>
+                <form>
+                    <a class="ui button purple" href="disease/find">click</a>
+                </form>
+            </div>
+            </div>
+        </div>
+        <div class="ui main text container segment">
+            <div class="ui huge header"></div>
+            <div class="ui top attached">
+                <div class="description">
+                    <p>Click here for information related to calories of a particular dish</p>
+                </div>
+                <form>
+                    <a class="ui button purple" href="food/find">click</a>
+                </form>
+            </div>
+            </div>
+        </div>
+        <div class="ui main text container segment">
+            <div class="ui huge header"></div>
+            <div class="ui top attached">
+                <div class="description">
+                    <p>Click here for information related to medicines</p>
+                </div>
+                <form>
+                    <a class="ui button purple" href="medicine/find">click</a>
+                </form>
+            </div>
+            </div>
+        </div>
+        <%if(currentUser){%>
+            <div class="ui main text container segment">
+                <div class="ui huge header"></div>
+                <div class="ui top attached">
+                    <div class="description">
+                        <p>Add your medical details here</p>
+                    </div>
+                    <form>
+                        <a class="ui button purple" href="/new1">click</a>
+                    </form>
+                </div>
+                </div>
+            </div>
+            <%}%>
+</body>
+</html>

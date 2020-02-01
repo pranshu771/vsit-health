@@ -1,0 +1,25 @@
+
+<% include ./partials/header %>
+<% results.forEach(function(disease) { %>
+   <li> </li>
+
+
+<div class="ui main text container segment">
+    <div class="ui huge header"><%= disease["disease_name"] %></div>
+    <div class="ui top attached">
+       <div class="item">
+            <div class="content">
+                <span><%= disease["disease_cat"] %></span>
+            </div>
+            <div class="description">
+                    <p><%= disease["disease_info"].substring(0,100) %></p>
+            </div>
+            <div class="extra">
+                <a class="ui button inverted purple" href="/disease/<%=disease['disease_id']%>">Read More</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% }) %>
+<% include ./partials/footer %>
