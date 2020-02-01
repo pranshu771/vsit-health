@@ -1,0 +1,29 @@
+
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css">
+        <link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
+        <title>Healthapp</title>
+    </head>
+    <body>
+        <div class="ui fixed inverted menu">
+            <div class="ui container">
+                <div class="header item"><i class="code icon"></i>Healthapp</div>
+                <a href="/blog" class="item">Home</a>
+                <a href="/blog/new" class="item">New Post</a>
+                <a href="/register" class="item">Signin</a>
+                <a href="/login" class="item">Login</a>
+                <a href="/logout" class="item">logout</a>
+            </div>
+        </div>
+<form action="/data" method="POST">
+    <input type="number" name="user[systolic]" placeholder="sysytolic">
+    <input type="number" name="user[diastolic]" placeholder="diastolic">
+    <input type="number" name="user[sugar]" placeholder="sugar before"> 
+    <input type="number" name="user[pulse]" placeholder="pulse">
+    <input type="submit">
+</form>
+    
+</body>
+</html>
+
